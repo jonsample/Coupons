@@ -1,3 +1,7 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+get-stores:
+  path: /getStores
+  defaults:  { _controller: AppBundle:WebGrocerSync:getStores }
