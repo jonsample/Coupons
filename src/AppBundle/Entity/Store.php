@@ -66,14 +66,14 @@ class Store
     /**
      * @var int
      *
-     * @ORM\Column(name="postal", type="integer")
+     * @ORM\Column(name="postal", type="string", length=10)
      */
     private $postal;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="phone", type="integer")
+     * @ORM\Column(name="phone", type="string", length=13, nullable=true)
      */
     private $phone;
 
@@ -83,6 +83,20 @@ class Store
      * @ORM\Column(name="api_id", type="string", length=255)
      */
     private $api_id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="circular_link", type="string", length=255)
+     */
+    private $circurlar_link;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="source_id", type="integer")
+     */
+    private $source_id;
 
 
     /**
@@ -242,7 +256,7 @@ class Store
     /**
      * Set postal
      *
-     * @param integer $postal
+     * @param string $postal
      *
      * @return Store
      */
@@ -256,7 +270,7 @@ class Store
     /**
      * Get postal
      *
-     * @return int
+     * @return string
      */
     public function getPostal()
     {
@@ -266,7 +280,7 @@ class Store
     /**
      * Set phone
      *
-     * @param integer $phone
+     * @param string $phone
      *
      * @return Store
      */
@@ -280,7 +294,7 @@ class Store
     /**
      * Get phone
      *
-     * @return int
+     * @return string
      */
     public function getPhone()
     {
@@ -309,6 +323,54 @@ class Store
     public function getApiId()
     {
         return $this->api_id;
+    }
+
+    /**
+     * Set circularLink
+     *
+     * @param string $circularLink
+     *
+     * @return Store
+     */
+    public function setCircularLink($circularLink)
+    {
+        $this->circurlar_link = $circularLink;
+
+        return $this;
+    }
+
+    /**
+     * Get circularLink
+     *
+     * @return string
+     */
+    public function getCircularLink()
+    {
+        return $this->circurlar_link;
+    }
+
+    /**
+     * Set soureId
+     *
+     * @param string $soureId
+     *
+     * @return Store
+     */
+    public function setSourceId($soureId)
+    {
+        $this->source_id = $soureId;
+
+        return $this;
+    }
+
+    /**
+     * Get soureId
+     *
+     * @return int
+     */
+    public function getSourceId()
+    {
+        return $this->source_id;
     }
 }
 
